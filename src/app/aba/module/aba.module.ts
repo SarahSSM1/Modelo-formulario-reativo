@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbaRoutes } from './aba.routing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AbaComponent } from '../aba.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [AbaComponent],
   imports: [
     CommonModule,
-    AbaRoutes
+    AbaRoutes,
+    ReactiveFormsModule
   ]
 })
 export class AbaModule { }
