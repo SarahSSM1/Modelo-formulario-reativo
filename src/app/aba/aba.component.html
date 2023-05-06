@@ -1,7 +1,49 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Gerenciamento de carros</li>
-  </ol>
+<nav class="navbar navbar-secondary bg-secondary">
+  <span class="navbar-brand mb-0 h1">
+    <img src="https://i.ebayimg.com/images/g/R5MAAOSwxF5ihXkU/s-l500.png" width="40" height="40" class="d-inline-block align-top" alt="">
+  </span>
+  <span class="navbar-brand mb-1 h3">SPOTIFLY</span>
 </nav>
 
+<br>
+  <h2>Top das baladas nacionais</h2>
+<br>
+
+<div class="container">
+  <form>
+    <h4>Nos diga seu Artista favorito!</h4>
+    <div class="form-group">
+      <label for="nome">Artista/Banda</label>
+      <input type="text" class="form-control" id="nome" aria-describedby="nome">
+    </div>
+    <div class="form-group">
+      <label for="musica">Música Favorita</label>
+      <input type="text" class="form-control" id="musica">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br>
+
+<div class="container">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let banda of banda">
+        <th scope="row">1</th>
+        <td>{{banda.id}}</td>
+        <td>{{banda.nome}}</td>
+        <td>{{banda.musica}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 

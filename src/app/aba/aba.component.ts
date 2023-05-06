@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicoService } from '../Servicos/servico.service';
-import { Pessoa } from '../Interface/interface';
-import { FormGroup } from '@angular/forms';
+import { Bandas } from '../Interface/interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-aba',
@@ -9,32 +9,14 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./aba.component.css']
 })
 export class AbaComponent implements OnInit {
-  pessoa!: Pessoa[];
-  myGroup = FormGroup;
+  banda!: Bandas[];
+  //banda$!: Observable<Bandas[]>
 
   constructor(private server: ServicoService ){}
 
   ngOnInit() {
-    this.server.list().subscribe(dados => this.pessoa = dados);
+    this.server.list().subscribe(dados => this.banda = dados);
+    //this.banda$ = this.server.list();
   }
-
-  // vai(){
-  //   this.formulario = this.fb.group({
-  //     nome: [null],
-  //     email: [null],
-  //     senha: [null],
-  //     endereco: [null],
-  //     complemento: [null],
-  //     cidade: [null],
-  //     estado: [null],
-  //   })
-  // }
-
-  // onSubmit(){
-  //   this.server.list().subscribe();
-  //   console.log()
-  // }
-
-
 
 }

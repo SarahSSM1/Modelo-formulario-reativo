@@ -1,3 +1,8 @@
-.container{
-  margin-top: 60px;
+span.navbar-brand.mb-1.h3 {
+  margin: 0px 1290px 0px 0px;
+}
+
+.h2, h2 {
+  font-size: 2rem;
+  margin-left: 38%;
 }

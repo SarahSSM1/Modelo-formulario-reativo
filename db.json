@@ -1,13 +1,19 @@
 {
-  "Pessoas": [
+  "Bandas": [
     {
-      "email": "sarahsz204@gmail.com",
-      "senha": "obaobaoba",
-      "endereco": "cu da tua mae",
-      "complemento": "apt 502",
-      "cidade": "Jaboatão dos Guararapes",
-      "estado": "...",
-      "id": 1
+      "id": 1,
+      "nome": "Radiohead",
+      "musica": "Paranoid  Android"
+    },
+    {
+      "id": 2,
+      "nome": "Gorillaz",
+      "musica": "Collar"
+    },
+    {
+      "id": 3,
+      "nome": "The Strokes",
+      "musica": "Partners in Crime"
     }
   ]
 }
