@@ -5,9 +5,7 @@
   <span class="navbar-brand mb-1 h3">SPOTIFLY</span>
 </nav>
 
-<br>
   <h2>Top das baladas nacionais</h2>
-<br>
 
 <div class="container">
   <form [formGroup]="form">
@@ -16,36 +14,31 @@
       <label for="nome">Artista/Banda</label>
       <input type="text" class="form-control" formControlName="nome" id="nome">
     </div>
-
     <div>
       <label for="musica">Música Favorita</label>
       <input type="text" class="form-control" formControlName="musica" id="musica">
     </div>
 
     <button type="submit" class="btn btn-primary" (click)="obter()">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="clean()">Cancel</button>
   </form>
 </div>
-
-<br>
 
 <div class="container">
   <table class="table">
     <thead class="thead-light">
       <tr>
-
+        <th scope="col">#</th>
         <th scope="col">Artista/Banda</th>
         <th scope="col">Música</th>
-
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let bandas of banda">
-
-        <td>{{bandas.nome}}</td>
-        <td>{{bandas.musica}}</td>
-
+      <tr *ngFor="let banda of bandas$ | async">
+        <td>{{ banda.id }}</td>
+        <td>{{ banda.nome }}</td>
+        <td>{{ banda.musica }}</td>
       </tr>
-
     </tbody>
   </table>
 </div>

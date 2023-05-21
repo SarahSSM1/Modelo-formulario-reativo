@@ -2,6 +2,15 @@ span.navbar-brand.mb-1.h3 {
   margin: 0px 1290px 0px 0px;
 }
 
+input#nome, #musica {
+  margin-bottom: 15px;
+}
+
+table.table {
+  margin-top: 20px;
+  border-color: #15141473!important;
+}
+
 .h2, h2 {
   font-size: 2rem;
   margin-left: 38%;

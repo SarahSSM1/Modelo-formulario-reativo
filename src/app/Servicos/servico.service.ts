@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { artistas } from '../aba/interface';
+import { artista } from '../aba/interface';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -8,15 +8,15 @@ import { tap } from 'rxjs/operators';
 })
 export class ServicoService {
 
- private readonly url = ' http://localhost:3000/artistas'
+ private readonly url = 'http://localhost:3000/artista'
 
   constructor(private http: HttpClient) {}
 
-  // list(){
-  //   return this.http.get<artistas[]>(this.url)
-  //     .pipe(
-  //       tap(console.log)
-  //     )
-  // }
+  list(){
+    return this.http.get<artista[]>(this.url)
+    .pipe(
+      tap(console.log)
+    );
+  }
 
 }

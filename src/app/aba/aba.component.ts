@@ -1,42 +1,47 @@
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ServicoService } from '../Servicos/servico.service';
 import { Observable} from 'rxjs';
-import { artistas } from './interface';
+import { artista } from './interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-aba',
   templateUrl: './aba.component.html',
   styleUrls: ['./aba.component.css'],
+  preserveWhitespaces: true
 })
 export class AbaComponent implements OnInit {
- banda!: artistas[];
+ bandas$!: Observable<artista[]>;
+
  form!: FormGroup;
+ submitted = false
 
-//  artista = new FormGroup ({
-//   nome: new FormControl(""),
-//   musica: new FormControl("")
-// })
-
- constructor( private service: ServicoService,
-              private fb: FormBuilder,
-              private route: ActivatedRoute){}
+ constructor( private service: ServicoService, private fb: FormBuilder){}
 
  ngOnInit() {
-  //this.service.list().subscribe(dados => this.banda = dados);
+   this.bandas$ = this.service.list()
 
-  const banda = this.route.snapshot.data['banda']
-    this.form = this.fb.group({
-      id: [banda.id],
-      nome: [banda.nome],
-      musica: [banda.musica]
-    })
-  }
+   this.form = this.fb.group({
+    nome: [null, [Validators.required]],
+    musica: [null, [Validators.required]]
+   })
+ }
 
-  obter(){
-      if(this.form.valid){
-        console.log('enviers')
-      }
+ obter(){
+  this.submitted = true
+    if(this.form.valid){
+       console.log('lançando a braba diretamente da puta que pariu')
     }
   }
+
+  clean(){
+    this.submitted = false
+    this.form.reset();
+  }
+
+  hasError(field: string){
+    return this.form.get
+  }
+
+}

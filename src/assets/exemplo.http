@@ -1,15 +1,19 @@
 http://localhost:3000/artistas
 
- // let song = Observable.create((observer: any) => {
-    //   console.log('iniciando observable')
+#   let song = Observable.create((observer: any) => {
+#        console.log('iniciando observable')
 
-    //   setTimeout(() => { observer.next('1') }, 1000);
-    //   setTimeout(() => { observer.next('2') }, 4000);
-    //   setTimeout(() => { observer.next('3') }, 6000);
-    //   setTimeout(() => { observer.next('4') }, 8000);
-    //   setTimeout(() => { observer.next('5') }, 10000);
-    // });
+#        setTimeout(() => { observer.next('1') }, 1000);
+#        setTimeout(() => { observer.next('2') }, 4000);
+#        setTimeout(() => { observer.next('3') }, 6000);
+#        setTimeout(() => { observer.next('4') }, 8000);
+#        setTimeout(() => { observer.next('5') }, 10000);
+#      });
 
-    // song.subscribe(
-    //  (value: any) => { console.log(value)}
-    // );
+#      song.subscribe(
+#       (value: any) => { console.log(value)}
+#      );
+
+#   ngOnDestroy(){
+#    this.bandas$.unsubscribe()
+#  }
