@@ -14,6 +14,16 @@
       "id": 3,
       "nome": "The Strokes",
       "musica": "Partners in Crime"
+    },
+    {
+      "nome": "Paramore",
+      "musica": "i'm not angry anymore",
+      "id": 4
+    },
+    {
+      "nome": "Panic! at the disco",
+      "musica": " Lying is the most fun",
+      "id": 5
     }
   ]
 }

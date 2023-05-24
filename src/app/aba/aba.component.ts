@@ -1,8 +1,8 @@
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ServicoService } from '../Servicos/servico.service';
+import { ServicoService } from './module/servico.service';
 import { Observable} from 'rxjs';
-import { artista } from './interface';
+import { artista } from './module/interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -29,9 +29,12 @@ export class AbaComponent implements OnInit {
  }
 
  obter(){
-  this.submitted = true
+  this.submitted = true;
     if(this.form.valid){
-       console.log('lançando a braba diretamente da puta que pariu')
+      this.service.create(this.form.value).subscribe(
+        // success => console.log(success),
+        // () => console.log('request completo')
+       )
     }
   }
 
@@ -40,8 +43,6 @@ export class AbaComponent implements OnInit {
     this.form.reset();
   }
 
-  hasError(field: string){
-    return this.form.get
-  }
+
 
 }
